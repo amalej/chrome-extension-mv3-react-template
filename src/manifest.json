@@ -1,0 +1,39 @@
+{
+  "name": "Chrome Extension MV3 template",
+  "description": "A simple template for Chrome Extensions",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "service-worker.ts"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content/index.ts"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/**/**.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "tabs"
+  ],
+  "action": {
+    "default_title": "Open Popup",
+    "default_popup": "pages/popup/index.html"
+  },
+  "options_page": "pages/options/index.html"
+}
